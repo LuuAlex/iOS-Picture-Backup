@@ -12,7 +12,7 @@ def enterToExit():
     sys.exit(0)
 
 
-dev = usb.core.find(idVendor=1452, idProduct=4776)
+dev = usb.core.find(idVendor=1452, idProduct=4776) #ID For iPhones
 
 if dev == None:
     print("iOS device not found.")
