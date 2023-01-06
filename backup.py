@@ -18,7 +18,10 @@ if dev == None:
     print("iOS device not found.")
     enterToExit()
 
-path = usb.util.get_string(dev, dev.iProduct)
+for cfg in dev:
+    sys.stdout.write(str(cfg.bConfigurationValue) + '\n')
+
+path = usb.util.get_string(dev, dev.id)
 vid = dev.idVendor
 pid = dev.idProduct
 print(path, vid, pid)
